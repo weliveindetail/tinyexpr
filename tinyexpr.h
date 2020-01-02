@@ -28,6 +28,7 @@
 #include "common.h"
 #include "compile.h"
 #include "free.h"
+#include "eval.h"
 
 
 #ifdef __cplusplus
@@ -38,9 +39,6 @@ extern "C" {
 /* Parses the input expression, evaluates it, and frees it. */
 /* Returns NaN on error. */
 double te_interp(const char *expression, int *error);
-
-/* Evaluates the expression. */
-double te_eval(const te_expr *n);
 
 /* Prints debugging information on the syntax tree. */
 void te_print(const te_expr *n);

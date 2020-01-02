@@ -2,13 +2,11 @@
 #define __COMPILE_H__
 
 #include "common.h"
+#include "eval.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-/* Evaluates the expression. */
-double te_eval(const te_expr *n);
 
 /* Parses the input expression and binds variables. */
 /* Returns NULL on error. */
