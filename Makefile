@@ -6,24 +6,24 @@ LFLAGS = -lm
 all: test test_pr bench example example2 example3
 
 
-test: test.c tinyexpr.c
+test: test.c tinyexpr.c compile.c
 	$(CC) $(CCFLAGS) -o $@ $^ $(LFLAGS)
 	./$@
 
-test_pr: test.c tinyexpr.c
+test_pr: test.c tinyexpr.c compile.c
 	$(CC) $(CCFLAGS) -DTE_POW_FROM_RIGHT -DTE_NAT_LOG -o $@ $^ $(LFLAGS)
 	./$@
 
-bench: benchmark.o tinyexpr.o
+bench: benchmark.o tinyexpr.o compile.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(LFLAGS)
 
-example: example.o tinyexpr.o
+example: example.o tinyexpr.o compile.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(LFLAGS)
 
-example2: example2.o tinyexpr.o
+example2: example2.o tinyexpr.o compile.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(LFLAGS)
 
-example3: example3.o tinyexpr.o
+example3: example3.o tinyexpr.o compile.o
 	$(CC) $(CCFLAGS) -o $@ $^ $(LFLAGS)
 
 .c.o:
