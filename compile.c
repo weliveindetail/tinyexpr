@@ -1,4 +1,5 @@
 #include "compile.h"
+#include "free.h"
 
 #include <limits.h>
 #include <math.h>
